@@ -28,6 +28,11 @@ mongoose.Promise = global.Promise;
 app.use('/auth', authRouters);
 app.use('/users', userRouters);
 
+//Home
+app.use("/", (req, res) => {
+ res.json({ message: "Titlepool Backend!"})
+});
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   res.status(err.status || 404).json({
